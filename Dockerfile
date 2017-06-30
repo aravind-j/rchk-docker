@@ -8,6 +8,7 @@ MAINTAINER "Joshua Ulrich" josh.m.ulrich@gmail.com
 RUN sed 's/^deb /deb-src /g' /etc/apt/sources.list > /etc/apt/sources.list.d/debian-src.list \
   && apt-get update \
   && apt-get build-dep -y r-base-dev \
+  && apt-get -f install \
   && apt-get install -y --no-install-recommends \
     vim-tiny \
     wget \
